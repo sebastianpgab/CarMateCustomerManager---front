@@ -1,0 +1,43 @@
+<section class="background">
+    <div class="panel panel-default">
+        <div class="buttons-list-vehicle">
+            <div class="vehicle-button">
+                <label class="label-default">VIN: </label>
+                <input type="text" [(ngModel)]="vin">
+                <button (click)="getVehicleByVin(vin)">
+                    <i class="fa-solid fa-magnifying-glass"></i> Szukaj
+                </button>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Marka</th>
+                    <th>Model</th>
+                    <th>VIN</th>
+                    <th>Rok</th>
+                    <th>Silnik</th>
+                    <th>Kilometry</th>
+                    <th>Szczegóły pojazdu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vehicle of vehicles">
+                    <td>{{vehicle.id}}</td>
+                    <td>{{vehicle.make}}</td>
+                    <td>{{vehicle.model}}</td>
+                    <td>{{vehicle.vin}}</td>
+                    <td>{{vehicle.year}}</td>
+                    <td>{{vehicle.engine}}</td>
+                    <td>{{vehicle.kilometers}}</td>
+                    <td>
+                        <a [routerLink]="['/vehicle', vehicle.id]">
+                            <i class="fa-solid fa-circle-info"></i> Szczegóły
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,35 @@
+
+    <section class="background">
+        <div class="searchRepairByDate">
+            <button (click)="searchRepairByDate()"><i class="fa-solid fa-magnifying-glass"></i> Wyszukaj naprawę</button>
+
+            <label for="startDate">Data początkowa</label>
+            <input type="date" id="startDate" [(ngModel)]="startDate" name="startDate">
+
+            <label for="endDate">Data końcowa</label>
+            <input type="date" id="endDate" [(ngModel)]="endDate" name="endDate">
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Opis</th>
+                    <th>Koszt</th>
+                    <th>Data naprawy</th>
+                    <th>Edytuj naprawę</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let repair of repairs">
+                    <td>{{repair.id }}</td>
+                    <td>{{repair.description}}</td>
+                    <td>{{repair.cost}}</td>
+                    <td>{{repair.repairDate | date:'yyyy-MM-dd'}}</td>
+                    <td><a [routerLink]="[repair.id]"><i class="fa-solid fa-pen-to-square"></i> Edytuj</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <button [routerLink]="['/vehicles', vehicleId, 'repair-add']"><i class="fa-solid fa-plus"></i> Dodaj naprawę</button>
+
+    </section>

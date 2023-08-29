@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <ul class="navbar-nav  flex-row">
+            <li class="nav-item me-3" routerLinkActive="active">
+                <a class="nav-link" routerLink="browser"><i class="fa-solid fa-user"></i>Strona Główna</a>
+            </li>
+            <li class="nav-item me-3" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <a class="nav-link" routerLink="vehicles"><i class="fas fa-car"></i>Pojazdy</a>
+            </li>
+            <li class="nav-item me-3" routerLinkActive="active">
+                <a class="nav-link" routerLink="clients"><i class="fa-solid fa-user"></i>Klienci</a>
+            </li>
+            <li class="nav-item me-3" routerLinkActive="active">
+                <a class="nav-link" routerLink="mailing"><i class="fa-solid fa-paper-plane"></i>Mailing</a>
+            </li>
+        </ul>
+    </div>
+</nav>

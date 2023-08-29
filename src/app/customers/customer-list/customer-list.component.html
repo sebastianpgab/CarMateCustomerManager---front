@@ -1,0 +1,41 @@
+<section class="background">
+    <div class="search-section">
+        <div class="search-group">
+            <label for="searchByFullName">Imię i Nazwisko</label>
+            <input type="text" id="searchByFullName" [(ngModel)]="fullName" name="searchByFullName">
+            <button type="button" (click)="searchByFullName()"><i class="fa-solid fa-magnifying-glass"></i> Szukaj</button>
+        </div>
+
+        <div class="search-group">
+            <label for="phoneNumber">Numer tel.</label>
+            <input type="text" id="phoneNumber" [(ngModel)]="phoneNumber" name="phoneNumber">
+            <button type="button" (click)="searchByPhoneNumber()"><i class="fa-solid fa-magnifying-glass"></i> Szukaj</button>
+        </div>
+    </div>
+    <button class="button-add-client" [routerLink]="['/client/add']"><i class="fa-sharp fa-solid fa-user-plus"></i> Dodaj klienta</button>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Numer telefonu</th>
+                <th>Email</th>
+                <th>Adres zamieszkania</th>
+                <th>Edytuj</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.id}}</td>
+                <td>{{customer.firstName}}</td>
+                <td>{{customer.lastName}}</td>
+                <td>{{customer.phoneNumber}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.address}}</td>
+                <td><a [routerLink]="['/client', customer.id]">Edytuj</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
