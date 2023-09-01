@@ -6,12 +6,13 @@ import { RouterModule } from '@angular/router';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerService } from './customer.service';
 import { CustomerUpdateComponent } from './customer-update/customer-update.component';
+import { AuthGuard } from '../canActivate-guard.service';
 
 const routes = [
-  {path: 'clients', component: CustomerListComponent},
-  {path: 'client/add', component: CustomerAddComponent},
-  {path: 'browser', component: CustomerBrowserComponent},
-  {path: 'client/:id', component: CustomerUpdateComponent},
+  {path: 'clients', component: CustomerListComponent, canActivate: [AuthGuard]},
+  {path: 'client/add', component: CustomerAddComponent, canActivate: [AuthGuard]},
+  {path: 'browser', component: CustomerBrowserComponent, canActivate: [AuthGuard]},
+  {path: 'client/:id', component: CustomerUpdateComponent, canActivate: [AuthGuard]},
 ]
 
 @NgModule({

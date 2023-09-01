@@ -16,5 +16,9 @@
                 <a class="nav-link" routerLink="mailing"><i class="fa-solid fa-paper-plane"></i>Mailing</a>
             </li>
         </ul>
+        <form>
+            <button type="button" (click)="accountService.logout()" [routerLink]="['/account/login']" *ngIf="accountService.isLogged">Wyloguj</button>
+            <!--<button type="button" [routerLink]="['/account/login']" *ngIf="!accountService.isLogged">Przejdz do logowania</button>!-->
+        </form>
     </div>
 </nav>

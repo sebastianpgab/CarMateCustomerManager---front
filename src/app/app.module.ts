@@ -10,9 +10,12 @@ import { CoreModule } from './core/core.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { MailingModule } from './mailing/mailing.module';
+import { AccountLoginComponent } from './account/account-login/account-login.component';
+import { AccountRegisterComponent } from './account/account-register/account-register.component';
+import { AccountModule } from './account/account.module';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'browser', pathMatch: 'full'},
+  {path: '', redirectTo: 'account/login', pathMatch: 'full'},
   {path: '**', component: NotFoundComponent}
 ]
 
@@ -30,6 +33,7 @@ const routes: Routes = [
     CustomersModule,
     VehiclesModule,
     MailingModule,
+    AccountModule,
     RouterModule.forRoot(routes)
   ],
   bootstrap: [AppComponent]

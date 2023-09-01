@@ -1,0 +1,15 @@
+<section>
+    <h3>Logowanie</h3>
+    <form (submit)="accountService.loginUser()">
+        <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" [(ngModel)]="accountService.loginParameters.email" name="email">
+        </div>
+        <div>
+            <label for="password">Hasło</label>
+            <input id="password" type="password" [(ngModel)]="accountService.loginParameters.password" name="password">
+        </div>
+        <button type="submit">Zaloguj</button>
+    </form>
+    <button [routerLink]="['/account/register']">Zarejestruj</button>
+</section>
