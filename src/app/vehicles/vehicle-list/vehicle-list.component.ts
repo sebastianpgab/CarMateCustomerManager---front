@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VehiclesListService } from '../vehicles.service';
+import { VehicleService } from '../vehicles.service';
 import { Vehicle } from '../model';
 import { MessageService } from 'src/app/services/message.service';
 
@@ -11,7 +11,8 @@ import { MessageService } from 'src/app/services/message.service';
 })
 export class VehicleListComponent implements OnInit {
 
-  constructor(private clientService: VehiclesListService, private messageService: MessageService) { }
+  clientId: any;
+  constructor(private clientService: VehicleService, private messageService: MessageService) { }
 
   vehicles: Vehicle[];
   vin: string;
