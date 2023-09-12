@@ -24,6 +24,7 @@
                 <th>Email</th>
                 <th>Adres zamieszkania</th>
                 <th>Edytuj</th>
+                <th>Dodaj pojazd</th>
             </tr>
         </thead>
         <tbody>
@@ -35,6 +36,7 @@
                 <td>{{customer.email}}</td>
                 <td>{{customer.address}}</td>
                 <td><a [routerLink]="['/client', customer.id]">Edytuj</a></td>
+                <td><a [routerLink]="['/vehicles', customer.id]">Dodaj</a></td>
             </tr>
         </tbody>
     </table>

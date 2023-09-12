@@ -37,7 +37,7 @@
   
     <!-- Update Vehicle Form -->
     <section *ngIf="update" class="vehicle-update-details">
-      <form (submit)="updateVehicle()">
+      <form>
         <!-- Form Fields -->
         <div class="form-group">
           <label for="make">Marka</label>
@@ -80,7 +80,7 @@
       </form>
   
       <!-- Save Button -->
-      <button class="button" type="submit">
+      <button class="button" (click)="updateVehicle()">
         <i class="fa-solid fa-floppy-disk"></i> Zapisz
       </button>
     </section>

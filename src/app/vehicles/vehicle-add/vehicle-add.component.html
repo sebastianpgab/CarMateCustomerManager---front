@@ -1,0 +1,33 @@
+<section class="background"> 
+    <h3>Dodaj pojazd</h3>
+
+    <form>
+        <div class="form-group">
+            <label for="make">Marka</label>
+            <input type="text" class="form-control" id="make" [(ngModel)]="vehicle.make" name="make">
+        </div>
+        <div class="form-group">
+            <label for="model">Model</label>
+            <input type="text" class="form-control" id="moedl" [(ngModel)]="vehicle.model" name="model">
+        </div>
+        <div class="form-group">
+            <label for="vin">VIN</label>
+            <input type="text" class="form-control" id="vin" [(ngModel)]="vehicle.vin" name="vin">
+        </div>
+        <div class="form-group">
+            <label for="year">Rok</label>
+            <input type="number" class="form-control" id="year" [(ngModel)]="vehicle.year" name="year">
+        </div>
+        <div class="form-group">
+            <label for="engine">Silnik</label>
+            <input type="text" class="form-control" id="engine" [(ngModel)]="vehicle.engine" name="engine">
+        </div>
+        <div class="form-group">
+            <label for="kilometers">Kilometry</label>
+            <input type="number" class="form-control" id="kilometers" [(ngModel)]="vehicle.kilometers" name="kilometers">
+        </div>
+    </form>
+
+    <button (click)="createVehicle()">Dodaj</button>
+
+</section>

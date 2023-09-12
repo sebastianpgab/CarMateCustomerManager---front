@@ -5,11 +5,12 @@ import { RouterModule } from '@angular/router';
 import { RepairUpdateComponent } from './repair-update/repair-update.component';
 import { FormsModule } from '@angular/forms';
 import { RepairAddComponent } from './repair-add/repair-add.component';
+import { AuthGuard } from '../canActivate-guard.service';
 
 const routes = [
-  {path: 'vehicles/:vehicleId/repair', component: RepairsComponent},
-  {path: 'vehicles/:vehicleId/repair/:repairId', component: RepairUpdateComponent},
-  {path: 'vehicles/:vehicleId/repair-add', component: RepairAddComponent}
+  {path: 'vehicles/:vehicleId/repair', component: RepairsComponent, canActivate: [AuthGuard]},
+  {path: 'vehicles/:vehicleId/repair/:repairId', component: RepairUpdateComponent, canActivate: [AuthGuard]},
+  {path: 'vehicles/:vehicleId/repair-add', component: RepairAddComponent, canActivate: [AuthGuard]}
 ]
 
 @NgModule({

@@ -1,10 +1,10 @@
 export interface Vehicle {
-    id: number;
+    id?: number;
     make:string;
     model: string;
     vin: string;
-    year: number;
+    year: number | null;
     engine: string;
-    kilometers: number;
+    kilometers: number | null;
     status: string;
 }

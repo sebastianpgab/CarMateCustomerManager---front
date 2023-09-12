@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AccountService } from './account/account.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,21 @@ import { Component } from '@angular/core';
   '.isEven {color: green}'
 ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  constructor() {
+  constructor(private accountService: AccountService) {
+  }
+
+  ngOnInit(): void {
+    this.initializeUserSession();
+  }
+
+  private initializeUserSession(): void {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.accountService.token = token;
+      this.accountService.isLogged = true;
+    }
   }
 
 }

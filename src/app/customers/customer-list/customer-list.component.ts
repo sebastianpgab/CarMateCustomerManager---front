@@ -18,7 +18,8 @@ export class CustomerListComponent implements OnInit {
 
   constructor( 
     private customerService: CustomerService, 
-    private messageService: MessageService) { }
+    private messageService: MessageService
+    ) { }
 
   ngOnInit() {
     this.refresh();

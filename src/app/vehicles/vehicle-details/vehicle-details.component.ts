@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { VehiclesListService } from '../vehicles.service';
+import { VehicleService } from '../vehicles.service';
 import { Vehicle } from '../model';
 import { Customer } from 'src/app/customers/model';
 import { MessageService } from 'src/app/services/message.service';
@@ -22,7 +22,7 @@ export class VehicleDetailsComponent implements OnInit {
   update: boolean = false;
   customer: Customer;
 
-  constructor(private activatedRoute: ActivatedRoute, private vehicleListService: VehiclesListService, private messageService: MessageService) { }
+  constructor(private activatedRoute: ActivatedRoute, private vehicleListService: VehicleService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.fetchVehicleById();
