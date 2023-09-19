@@ -19,7 +19,6 @@ export class CustomerAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.customer = {
-      id: null,
       firstName: '',
       lastName: '',
       address: '',
@@ -30,7 +29,6 @@ export class CustomerAddComponent implements OnInit {
 
   add(): void{
     this.customerService.createCustomer({
-      id : this.customer.id,
       firstName: this.customer.firstName,
       lastName: this.customer.lastName,
       address: this.customer.address,

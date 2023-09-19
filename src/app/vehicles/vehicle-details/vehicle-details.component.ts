@@ -26,6 +26,15 @@ export class VehicleDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.fetchVehicleById();
+    this.vehicle = {
+      make: '',
+      model: '',
+      vin: '',
+      year: null,
+      engine: '',
+      kilometers: null,
+      status: ''
+    }
   }
 
   fetchVehicleById(){

@@ -15,7 +15,7 @@ export class CustomerBrowserComponent implements OnInit {
 
   amountOfRepairs: number = 0;
   cashFlow: number | null = 0;
-  ids: (number | null)[];
+  ids: (number | null | undefined)[];
   numberOfClients: number = 0;
   currentIdIndex = 0;
 
