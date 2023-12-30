@@ -37,7 +37,7 @@ export class VehicleDetailsComponent implements OnInit {
     }
   }
 
-  fetchVehicleById(){
+  fetchVehicleById() {
     this.activatedRoute.params.subscribe(params => {
       const id = parseInt(params['id']);
         this.vehicleListService.getVehicleById(id).subscribe(vehicle => {
