@@ -11,7 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 
 const config: Config = {
   customerLimit: 100,
-  apiUrl:  'http://sad_jackson:4210/'
+  apiUrl:  'http://localhost:4210/'
 };
 
 @NgModule({
