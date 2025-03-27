@@ -1,28 +1,45 @@
 <section class="background">
-    <h3>Rejestracja</h3>
-    <form (submit)="accountService.registerUser()">
-        <div class="input">
-            <input id="firtsName" type="text" [(ngModel)]="accountService.user.firstName" name="firstName" placeholder="Imię">
-        </div>
-        <div class="input">
-            <input  id="lastName" type="text" [(ngModel)]="accountService.user.lastName" name="lastName" placeholder="Nazwisko">
-        </div>
-        <div class="input">
-            <input id="email" type="email" [(ngModel)]="accountService.user.email" name="email" placeholder="Email" autocomplete="off">
-        </div>
-        <div class="input">
-            <input id="password" type="password" [(ngModel)]="accountService.user.password" name="password" placeholder="Hasło">
-        </div>
-        <div class="input">
-            <input id="confirmPassword" type="password" [(ngModel)]="accountService.user.confirmPassword" name="confirmPassword" placeholder="Powtórz hasło">
-        </div>
-        <div class="input">
-            <input id="nationality" type="text" [(ngModel)]="accountService.user.nationality" name="nationality" placeholder="Obywatelstwo">
-        </div>
-        <div class="input">
-            <input id="dateofBirth" type="date" title="Data urodzenia" [(ngModel)]="accountService.user.dateOfBirth" name="dateofBirth">
-        </div>
-        <button type="submit">Zarejestruj</button>
+    <h3 class="statistic-title">Rejestracja</h3>
+  
+    <form class="form-layout" (submit)="accountService.registerUser()" novalidate>
+      <div class="form-group">
+        <input id="firstName" type="text" class="form-control" [(ngModel)]="accountService.user.firstName" name="firstName" placeholder="Imię">
+      </div>
+  
+      <div class="form-group">
+        <input id="lastName" type="text" class="form-control" [(ngModel)]="accountService.user.lastName" name="lastName" placeholder="Nazwisko">
+      </div>
+  
+      <div class="form-group">
+        <input id="email" type="email" class="form-control" [(ngModel)]="accountService.user.email" name="email" placeholder="Email" autocomplete="off">
+      </div>
+  
+      <div class="form-group">
+        <input id="password" type="password" class="form-control" [(ngModel)]="accountService.user.password" name="password" placeholder="Hasło">
+      </div>
+  
+      <div class="form-group">
+        <input id="confirmPassword" type="password" class="form-control" [(ngModel)]="accountService.user.confirmPassword" name="confirmPassword" placeholder="Powtórz hasło">
+      </div>
+  
+      <div class="form-group">
+        <input id="nationality" type="text" class="form-control" [(ngModel)]="accountService.user.nationality" name="nationality" placeholder="Obywatelstwo">
+      </div>
+  
+      <div class="form-group">
+        <label for="dateofBirth">Data urodzenia</label>
+        <input id="dateofBirth" type="date" class="form-control" [(ngModel)]="accountService.user.dateOfBirth" name="dateofBirth">
+      </div>
+  
+      <button type="submit" class="btn-primary">
+        <i class="fa-solid fa-user-plus"></i> Zarejestruj
+      </button>
     </form>
-    <button  routerLink="/account/login">Wróć do logowania</button>
-</section>
+  
+    <div class="button-group">
+      <button class="btn-primary" routerLink="/account/login">
+        <i class="fa-solid fa-arrow-left"></i> Wróć do logowania
+      </button>
+    </div>
+  </section>
+  
