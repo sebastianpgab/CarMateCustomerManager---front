@@ -1,15 +1,26 @@
 <section class="background">
-    <h3>Logowanie</h3>
-    <form (submit)="accountService.loginUser()">
-        <div>
-            <label for="email">Email</label>
-            <input id="email" type="email" [(ngModel)]="accountService.loginParameters.email" name="email">
-        </div>
-        <div>
-            <label for="password">Hasło</label>
-            <input id="password" type="password" [(ngModel)]="accountService.loginParameters.password" name="password">
-        </div>
-        <button type="submit">Zaloguj</button>
+    <h3 class="statistic-title">Logowanie</h3>
+  
+    <form class="form-layout" (submit)="accountService.loginUser()" novalidate>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" [(ngModel)]="accountService.loginParameters.email" name="email" class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Hasło</label>
+        <input id="password" type="password" [(ngModel)]="accountService.loginParameters.password" name="password" class="form-control">
+      </div>
+  
+      <button type="submit" class="btn-primary">
+        <i class="fa-solid fa-right-to-bracket"></i> Zaloguj
+      </button>
     </form>
-    <button [routerLink]="['/account/register']">Zarejestruj</button>
-</section>
+  
+    <div class="button-group">
+      <button class="btn-primary" [routerLink]="['/account/register']">
+        <i class="fa-solid fa-user-plus"></i> Zarejestruj
+      </button>
+    </div>
+  </section>
+  
