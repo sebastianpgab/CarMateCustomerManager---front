@@ -1,30 +1,39 @@
 <section class="background">
-    <header class="panel-heading">
-        <h3>Dodaj klienta</h3>
-    </header>
-    <div class="panel-body" >
-        <form novalidate>
-            <div class="form-group">
-                <label for="firstName">Imie</label>
-                <input type="text" class="form-control" id="firstName" [(ngModel)]="customer.firstName" name="firstName">
-            </div>
-            <div class="form-group">
-                <label for="lastName">Nazwisko</label>
-                <input type="text" class="form-control" id="lastName" [(ngModel)]="customer.lastName" name="lastName">
-            </div>
-            <div class="form-group">
-                <label for="address">Adres zamieszkania</label>
-                <input type="text" class="form-control" id="address" [(ngModel)]="customer.address" name="address">
-            </div>
-            <div class="form-group">
-                <label for="phoneNumber">Numer telefonu</label>
-                <input type="text" class="form-control" id="phoneNumber" [(ngModel)]="customer.phoneNumber" name="phoneNumber">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" [(ngModel)]="customer.email" name="email">
-            </div>
-            <button type="button" class="button" (click)="add()"><i class="fa-solid fa-plus"></i> Dodaj</button>
-        </form>
+    <div class="panel-heading">
+      <h3 class="statistic-title">Dodaj klienta</h3>
     </div>
-</section>
+  
+    <div class="panel-body">
+      <form class="form-layout" novalidate>
+        <div class="form-group">
+          <label for="firstName">Imię</label>
+          <input type="text" class="form-control" id="firstName" [(ngModel)]="customer.firstName" name="firstName">
+        </div>
+  
+        <div class="form-group">
+          <label for="lastName">Nazwisko</label>
+          <input type="text" class="form-control" id="lastName" [(ngModel)]="customer.lastName" name="lastName">
+        </div>
+  
+        <div class="form-group">
+          <label for="address">Adres zamieszkania</label>
+          <input type="text" class="form-control" id="address" [(ngModel)]="customer.address" name="address">
+        </div>
+  
+        <div class="form-group">
+          <label for="phoneNumber">Numer telefonu</label>
+          <input type="text" class="form-control" id="phoneNumber" [(ngModel)]="customer.phoneNumber" name="phoneNumber">
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="customer.email" name="email">
+        </div>
+  
+        <button type="button" class="btn-primary" (click)="add()">
+          <i class="fa-solid fa-plus"></i> Dodaj
+        </button>
+      </form>
+    </div>
+  </section>
+  
