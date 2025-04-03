@@ -8,8 +8,7 @@ import { MessageService } from 'src/app/services/message.service';
 @Component({
   selector: 'cus-customer-browser',
   templateUrl: './customer-browser.component.html',
-  styles: [
-  ]
+  styleUrls: ['./style.scss']
 })
 export class CustomerBrowserComponent implements OnInit {
 

@@ -1,18 +1,25 @@
 <section class="background">
     <div class="search-section">
         <div class="search-group">
-            <label for="searchByFullName">Imię i Nazwisko</label>
+          <label for="searchByFullName">Imię i Nazwisko</label>
+          <div class="search-inline">
             <input type="text" id="searchByFullName" [(ngModel)]="fullName" name="searchByFullName">
-            <button type="button" (click)="searchByFullName()"><i class="fa-solid fa-magnifying-glass"></i> Szukaj</button>
+            <button type="button" (click)="searchByFullName()">
+              <i class="fa-solid fa-magnifying-glass"></i> Szukaj
+            </button>
+          </div>
         </div>
-
+      
         <div class="search-group">
-            <label for="phoneNumber">Numer tel.</label>
+          <label for="phoneNumber">Numer tel.</label>
+          <div class="search-inline">
             <input type="text" id="phoneNumber" [(ngModel)]="phoneNumber" name="phoneNumber">
-            <button type="button" (click)="searchByPhoneNumber()"><i class="fa-solid fa-magnifying-glass"></i> Szukaj</button>
+            <button type="button" (click)="searchByPhoneNumber()">
+              <i class="fa-solid fa-magnifying-glass"></i> Szukaj
+            </button>
+          </div>
         </div>
-    </div>
-    <button class="button-add-client" [routerLink]="['/client/add']"><i class="fa-sharp fa-solid fa-user-plus"></i> Dodaj klienta</button>
+      </div>      
 
     <table class="table table-striped">
         <thead>
@@ -40,4 +47,6 @@
             </tr>
         </tbody>
     </table>
+    <button class="button-add-client" [routerLink]="['/client/add']"><i class="fa-sharp fa-solid fa-user-plus"></i> Dodaj klienta</button>
+
 </section>

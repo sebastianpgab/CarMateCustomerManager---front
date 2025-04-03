@@ -4,8 +4,7 @@ import { AccountService } from 'src/app/account/account.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styles: [
-  ]
+  styleUrls: ['./style.scss']
 })
 export class NavbarComponent implements OnInit {
 
