@@ -1,22 +1,25 @@
 <section class="background">
-    <h3>Dodaj naprawę</h3>
-
-    <form (submit)="addRepair()">
-        <div class="form-group">
-            <label for="description">Opis</label>
-            <input type="text" class="form-control" id="description" [(ngModel)]="repair.description" name="description" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="cost">Koszt</label>
-            <input type="number" class="form-control" id="cost" [(ngModel)]="repair.cost" name="cost" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="repairDate">Data naprawy</label>
-            <input type="date" class="form-control" id="repairDate" [(ngModel)]="repair.repairDate" name="repairDate" required>
-        </div>
-        
-        <button type="submit"><i class="fa-solid fa-floppy-disk"></i> Zapisz</button>
+    <h3 class="statistic-title">Dodaj naprawę</h3>
+  
+    <form class="form-layout" (submit)="addRepair()" novalidate>
+      <div class="form-group">
+        <label for="description">Opis</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]="repair.description" name="description" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="cost">Koszt</label>
+        <input type="number" class="form-control" id="cost" [(ngModel)]="repair.cost" name="cost" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="repairDate">Data naprawy</label>
+        <input type="date" class="form-control" id="repairDate" [(ngModel)]="repair.repairDate" name="repairDate" required>
+      </div>
+  
+      <button type="submit" class="btn-primary">
+        <i class="fa-solid fa-floppy-disk"></i> Zapisz
+      </button>
     </form>
-</section>
+  </section>
+  
