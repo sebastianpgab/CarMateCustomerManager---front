@@ -1,88 +1,86 @@
-<!-- Root Section -->
 <section class="background">
 
-    <!-- Vehicle Details -->
-    <section>
-      <h5 class="title">Szczegoły pojazdu:</h5>
-      <div class="info-vehicle">
-        <p><strong>ID:</strong> {{vehicle.id}}</p>
-        <p><strong>Marka:</strong> {{vehicle.make}}</p>
-        <p><strong>Model:</strong> {{vehicle.model}}</p>
-        <p><strong>VIN:</strong> {{vehicle.vin}}</p>
-        <p><strong>Rok:</strong> {{vehicle.year}}</p>
-        <p><strong>Silnik:</strong> {{vehicle.engine}}</p>
-        <p><strong>Kilometry:</strong> {{vehicle.kilometers}}</p>
-      </div>
-  
-      <!-- Vehicle Repair Status -->
-      <div *ngIf="vehicle.status" 
-           class="alert-status alert" 
-           [ngClass]="{
-             'alert-warning': vehicle.status === 'Czeka na naprawę', 
-             'alert-danger': vehicle.status === 'W trakcie naprawy', 
-             'alert-success': vehicle.status === 'Naprawiony'
-           }" 
-           role="alert">
-        Status naprawy: {{vehicle.status}}
-      </div>
-  
-      <!-- Edit and Check Buttons -->
-      <button class="button" type="button" (click)="showUpdate()">
+  <!-- Vehicle Details -->
+  <section>
+    <h3 class="statistic-title">Szczegóły pojazdu</h3>
+
+    <div class="info-vehicle">
+      <p><strong>ID:</strong> {{vehicle.id}}</p>
+      <p><strong>Marka:</strong> {{vehicle.make}}</p>
+      <p><strong>Model:</strong> {{vehicle.model}}</p>
+      <p><strong>VIN:</strong> {{vehicle.vin}}</p>
+      <p><strong>Rok:</strong> {{vehicle.year}}</p>
+      <p><strong>Silnik:</strong> {{vehicle.engine}}</p>
+      <p><strong>Kilometry:</strong> {{vehicle.kilometers}}</p>
+    </div>
+
+    <!-- Vehicle Repair Status -->
+    <div *ngIf="vehicle.status" 
+         class="alert-status alert" 
+         [ngClass]="{
+           'alert-warning': vehicle.status === 'Czeka na naprawę', 
+           'alert-danger': vehicle.status === 'W trakcie naprawy', 
+           'alert-success': vehicle.status === 'Naprawiony'
+         }" 
+         role="alert">
+      Status naprawy: {{vehicle.status}}
+    </div>
+
+    <!-- Edit and Check Buttons -->
+    <div class="button-group">
+      <button type="button" class="btn-primary" (click)="showUpdate()">
         <i class="fa-solid fa-pen-to-square"></i> Edytuj dane pojazdu
       </button>
-      <button class="button" [routerLink]="['/vehicles', vehicle.id, 'repair']">
+      <button class="btn-primary" [routerLink]="['/vehicles', vehicle.id, 'repair']">
         <i class="fa-solid fa-check"></i> Sprawdź naprawy
       </button>
-    </section>
-  
-    <!-- Update Vehicle Form -->
-    <section *ngIf="update" class="vehicle-update-details">
-      <form>
-        <!-- Form Fields -->
-        <div class="form-group">
-          <label for="make">Marka</label>
-          <input type="text" id="make" [(ngModel)]="updatedVehicle.make" name="make" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="model">Model</label>
-          <input type="text" id="model" [(ngModel)]="updatedVehicle.model" name="model" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="vin">VIN</label>
-          <input type="text" id="vin" [(ngModel)]="updatedVehicle.vin" name="vin" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="year">Rok</label>
-          <input type="text" id="year" [(ngModel)]="updatedVehicle.year" name="year" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="engine">Silnik</label>
-          <input type="text" id="engine" [(ngModel)]="updatedVehicle.engine" name="engine" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="kilometers">Kilometry</label>
-          <input type="text" id="kilometers" [(ngModel)]="updatedVehicle.kilometers" name="kilometers" class="form-control">
-        </div>
-        <!-- Status Dropdown -->
-        <div class="form-group">
-          <label for="status">Status</label>
-          <select id="status" [(ngModel)]="updatedVehicle.status" name="status" class="form-control">
-            <option *ngFor="let status of repairStatusOptions">{{ status }}</option>
-          </select>
-        </div>
-        <!-- Send Repair Notification Dropdown -->
-        <div class="form-group">
-          <label for="sendRepairNotification">Wysłać status naprawy do klienta?</label>
-          <select id="sendRepairNotification" [(ngModel)]="sendRepairNotification" name="repairNotificationOptions" class="form-control">
-            <option *ngFor="let option of repairNotificationOptions">{{ option }}</option>
-          </select>
-        </div>
-      </form>
-  
-      <!-- Save Button -->
-      <button class="button" (click)="updateVehicle()">
-        <i class="fa-solid fa-floppy-disk"></i> Zapisz
-      </button>
-    </section>
-  
+    </div>
   </section>
+
+  <!-- Update Vehicle Form -->
+  <section *ngIf="update" class="vehicle-update-details">
+    <form class="form-layout" novalidate>
+      <div class="form-group">
+        <label for="make">Marka</label>
+        <input type="text" id="make" [(ngModel)]="updatedVehicle.make" name="make" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input type="text" id="model" [(ngModel)]="updatedVehicle.model" name="model" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="vin">VIN</label>
+        <input type="text" id="vin" [(ngModel)]="updatedVehicle.vin" name="vin" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="year">Rok</label>
+        <input type="text" id="year" [(ngModel)]="updatedVehicle.year" name="year" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="engine">Silnik</label>
+        <input type="text" id="engine" [(ngModel)]="updatedVehicle.engine" name="engine" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="kilometers">Kilometry</label>
+        <input type="text" id="kilometers" [(ngModel)]="updatedVehicle.kilometers" name="kilometers" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status" [(ngModel)]="updatedVehicle.status" name="status" class="form-control">
+          <option *ngFor="let status of repairStatusOptions">{{ status }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="sendRepairNotification">Wysłać status naprawy do klienta?</label>
+        <select id="sendRepairNotification" [(ngModel)]="sendRepairNotification" name="repairNotificationOptions" class="form-control">
+          <option *ngFor="let option of repairNotificationOptions">{{ option }}</option>
+        </select>
+      </div>
+    </form>
+
+    <button class="btn-primary" (click)="updateVehicle()">
+      <i class="fa-solid fa-floppy-disk"></i> Zapisz
+    </button>
+  </section>
+
+</section>

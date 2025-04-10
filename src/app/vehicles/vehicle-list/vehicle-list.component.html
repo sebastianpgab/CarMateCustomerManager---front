@@ -1,14 +1,17 @@
 <section class="background">
     <div class="panel panel-default">
-        <div class="buttons-list-vehicle">
-            <div class="vehicle-button">
-                <label class="label-default">VIN: </label>
-                <input type="text" [(ngModel)]="vin">
-                <button (click)="getVehicleByVin(vin)">
-                    <i class="fa-solid fa-magnifying-glass"></i> Szukaj
+        <div class="search-section">
+            <div class="search-group">
+              <label for="vin">VIN:</label>
+              <div class="search-inline">
+                <input type="text" id="vin" [(ngModel)]="vin">
+                <button type="button" class="btn-primary" (click)="getVehicleByVin(vin)">
+                  <i class="fa-solid fa-magnifying-glass"></i> Szukaj
                 </button>
+              </div>
             </div>
-        </div>
+          </div>
+          
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
