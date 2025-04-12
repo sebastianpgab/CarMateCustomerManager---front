@@ -24,9 +24,21 @@
     border-radius: 16px;
     padding: 1.5rem;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
     box-sizing: border-box;
+  
+    /* Dodane poniżej: */
+    justify-content: center; /* wyśrodkowanie w poziomie */
+    align-items: center;     /* wyśrodkowanie w pionie */
+    text-align: center;      /* wyśrodkowanie tekstu w paragrafach */
+    font-size: 1.25rem;      /* powiększenie tekstu */
+  }
+  
+  .statistic-properties p i {
+    font-size: 1.5rem; /* powiększenie ikony */
+    margin-right: 8px; /* odstęp między ikoną a tekstem */
   }
 
   .statistic-title {
